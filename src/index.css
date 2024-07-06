@@ -1,0 +1,410 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+html{
+  font-size: 100px;
+  scroll-behavior: smooth;
+}
+#root{
+  width: 100%;
+  height: 100%;
+
+}
+
+body{
+  scroll-behavior: smooth;
+}
+
+
+
+.user-box {
+  position: relative;
+}
+
+.user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.user-box label {
+  position: absolute;
+  top:0;
+  left: 9%;
+  padding: 10px 0;
+  font-size: 0.2rem;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+  top: 0px;
+  left: 9%;
+  color: #03e9f4;
+  font-size: .1rem;
+
+}
+
+#container1{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+ transition: background-image 0.2s ease-in-out;
+}
+
+#container1::before{
+content: '';
+background: url(Images/sunset.jpg) no-repeat center center/cover;
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+z-index: -1;
+transition: background-image 0.2s ease-in-out;
+}
+
+#container1.Rain{
+  background: url(Images/rain.png) no-repeat center center/cover;
+}
+
+#container1.Clear{
+  background: url(Images/clear.png) no-repeat center center/cover;
+}
+
+#container1.Clouds{
+  background: url(Images/cloud.png) no-repeat center center/cover;
+}
+
+#container1.Snow{
+  background: url(Images/snow.png) no-repeat center center/cover;
+}
+
+
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+input{
+  background: transparent !important;
+  width: 50% !important;
+  height: 50px;
+  font-size: 0.3rem;
+}
+input::placeholder{
+  color: white !important;
+  
+}
+
+.btn{
+  width: 12%;
+  font-size: 0.2rem;
+  padding: 0;
+  margin: 0;
+  height: 46%;
+}
+
+.search
+{
+  display: flex;
+  width: 35%;
+  position:absolute;
+  top: 5%;
+  height: 100px;
+  backdrop-filter: blur(20px);
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 15px;
+}
+
+p{
+  font-size: 0.3rem;
+  color: white;
+  margin: 0;
+}
+
+h1{
+  font-size: 1.5rem;
+}
+
+svg{
+  width: 15px;
+    height: 45px !important;
+    animation: shake 1s ease-in-out infinite; 
+    cursor: pointer;
+}
+
+
+@keyframes shake {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-3px); }
+  50% { transform: translateY(3px); }
+  75% { transform: translateY(-1px); }
+  100% { transform: translateY(0); }
+
+}
+
+.CityCurrentInfo{
+  width: 60%;
+  display: flex;
+  height: 70%;
+  gap: 20px;
+}
+
+.WeatherInfo{
+  width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.Main_Info
+{
+  width: 100%;
+  height: 30%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+.City_Degree{
+  padding-left: 100px;
+  padding-top: 20px;
+
+  @media (min-width: 481px) and (max-width: 1200px) {
+    padding-left: 50px;
+  }
+}
+
+.City{
+  color: cyan;
+  padding-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+.City p {
+  color: cyan;
+}
+.Degree{
+  font-weight: Bold;
+  line-height: 100px;
+  color: white;
+}
+
+#icon
+{
+  padding-top: 70px;
+  width: 80px;
+  height: 80px;;
+  
+}
+
+#icon.Clear{
+  background: url(Images/clearIcon.png) no-repeat center center/cover;
+}
+
+#icon.Rain{
+  background: url(Images/rainIcon.png) no-repeat center center/cover;
+}
+#icon.Clouds{
+  background: url(Images/cloudIcon.png) no-repeat center center/cover;
+}
+#icon.Snow{
+  background: url(Images/snowIcon.png) no-repeat center center/cover;
+}
+
+
+.Mode{
+  transform: rotate(-90deg);
+  color: cyan;
+}
+
+.Extra_Info{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.Extra_Info div{
+  width: 24%;
+  background-color: rgba(0,0,0,.7);
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+.Extra_Info div p:nth-child(2){
+  font-size: 0.5rem;
+}
+
+
+#map{
+  width: 35%;
+  height: 10%;
+}
+
+
+@media all and (max-width: 480px)
+{
+  html{
+    font-size: 15px;
+  }
+
+  .user-box label{
+    font-size: 0.9rem;
+    left: 2%;
+  }
+
+  .user-box input:focus ~ label,
+.user-box input:valid ~ label {
+  font-size: 0.5rem;
+  left: 2%;
+}
+
+
+input{
+  width: 95% !important;
+    margin: 20px 0;
+}
+
+.btn{
+  width: 25%;
+  font-size: 1.2rem;
+}
+
+.search{
+  flex-direction: column;
+    width: 100%;
+    height: 120px;
+}
+
+p{
+  font-size: 1.7rem;
+}
+h1{
+  font-size: 5rem;
+
+}
+
+
+.CityCurrentInfo {
+  width: 100%;
+  margin-top: 45px;
+  flex-direction: column;
+  gap:0;
+}
+
+.Main_Info{
+  width: 100%;
+    position: relative;
+    height: 40%;
+}
+
+.City_Degree{
+  padding-left: 0;
+    padding-top: 50px;
+}
+
+.Mode{
+  position: absolute;
+    right: 0;
+    top: 40%;
+}
+.Extra_Info{
+  flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+.Extra_Info div{
+  margin-bottom: 20px;
+  width: 80%;
+  height: 55%;
+}
+.Extra_Info div p:nth-child(2){
+  font-size: 1.5rem;
+}
+#map{
+  width: 90%;
+  height: 10%;
+}
+a{
+  margin: auto;
+}
+canvas{
+  width: 100%;
+}
+
+}
+
+@media all and (min-width: 481px) and (max-width: 1024px){
+.search{
+  width: 80%;
+}
+p{
+  font-size: 0.2rem;
+}
+h1{
+  font-size: 1.2rem;
+}
+
+.CityCurrentInfo{
+  flex-direction: column;
+  gap:0;
+  width: 80%;
+}
+
+.Main_Info{
+  width: 100%;
+  position: relative;
+  height: 50%;
+}
+.Mode{
+  position: absolute;
+  right: 0;
+  top: 40%;
+}
+.Extra_Info{
+  width: 100%;
+}
+.Extra_Info div{
+  height: 70%;
+}
+.Extra_Info div p:nth-child(2){
+  font-size: 0.4rem;
+}
+#map{
+  width: 100%;
+  height: 10%;
+}
+canvas{
+  width: 100%;
+}
+
+}
