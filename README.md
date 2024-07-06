@@ -30,5 +30,3 @@ Welcome to my React Weather App project! This application allows users to input 
 
 I welcome contributions, feedback, and suggestions! Feel free to fork this repository, make improvements, or report any issues you encounter. Let's collaborate to make this weather app even better.
 
-## Demo
-https://github.com/MohamedMedhat10/Weather-App-React/assets/165725465/cafa5d89-2d79-451f-bb30-2975484af87a
