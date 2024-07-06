@@ -1,5 +1,3 @@
-# About Me
-
 ## Project Overview
 
 Welcome to my React Weather App project! This application allows users to input a city name and instantly fetches real-time weather data and displays the location on a map. It leverages React.js for the front-end interface and integrates with weather APIs to provide accurate and up-to-date information.
